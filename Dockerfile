@@ -6,5 +6,7 @@ RUN wget https://github.com/jbvmio/kubetail/releases/download/v1.0.0/linux.amd64
 RUN tar -xvzf kubetail.tar.gz kubetail
 RUN cp kubetail /usr/local/bin/
 
+EXPOSE 7681
+
 ENTRYPOINT ["/sbin/tini", "--"]
 CMD ["ttyd", "echo Hello!"]
